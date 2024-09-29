@@ -99,10 +99,10 @@ const SparklesText: React.FC<SparklesTextProps> = ({
     };
 
     initializeStars();
-    const interval = setInterval(updateStars, 100);
+    const interval = setInterval(updateStars, 600);
 
     return () => clearInterval(interval);
-  }, [colors.first, colors.second]);
+  }, []);
 
   return (
     <div

@@ -1,13 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import AnimatedCircularProgressBar from "@/components/ui/animated-circular-progress-bar";
 import { throttle } from "lodash";
 import { usePathname } from "next/navigation";
 
-type Props = { children: any };
-
-const PrimaryLayout = ({ children }: Props) => {
+const PrimaryLayout = ({ children }: DefaultProps) => {
   const [scrollValue, setScrollValue] = useState(0);
   const pathname = usePathname();
 
