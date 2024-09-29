@@ -1,9 +1,8 @@
-import AnimatedShinyText from "@/components/ui/animated-shiny-text";
 import { Button } from "@/components/ui/button";
 import { RainbowButton } from "@/components/ui/rainbow-button";
 import Ripple from "@/components/ui/ripple";
 import SparklesText from "@/components/ui/sparkles-text";
-import { ArrowDownIcon, ArrowRightIcon, Download } from "lucide-react";
+import { ArrowDownIcon, Download } from "lucide-react";
 
 const Hero = () => {
   return (
