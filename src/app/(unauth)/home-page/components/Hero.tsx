@@ -1,8 +1,9 @@
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { ArrowDownIcon, Download } from "lucide-react";
 import { RainbowButton } from "@/components/ui/rainbow-button";
 import Ripple from "@/components/ui/ripple";
 import SparklesText from "@/components/ui/sparkles-text";
-import { ArrowDownIcon, Download } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -26,7 +27,10 @@ const Hero = () => {
             variant={"outline"}
             className="h-11 px-8 py-2 inline-flex items-center justify-center rounded-xl font-medium"
           >
-            <span>Explore My Work</span> <ArrowDownIcon className="ml-3 size-[18px] mb-1" />
+            <Link href={"#featured-projects"}>
+              <span>Explore My Work</span>
+            </Link>
+            <ArrowDownIcon className="ml-3 size-[18px] mb-1" />
           </Button>
           <RainbowButton>
             <div className="flex cursor-pointer text-sm">

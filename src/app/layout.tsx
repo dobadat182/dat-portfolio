@@ -1,6 +1,6 @@
 import { Calistoga, Roboto } from "next/font/google";
-import "../styles/globals.css";
 import { twMerge } from "tailwind-merge";
+import "../styles/globals.css";
 
 const calistoga = Calistoga({
   subsets: ["vietnamese"],
@@ -22,7 +22,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={twMerge(roboto.className, calistoga.className, "bg-gray-900 text-white antialiased")}
+      className={twMerge(
+        roboto.className,
+        calistoga.className,
+        "bg-gray-900 text-white antialiased scroll-smooth"
+      )}
     >
       <body>{children}</body>
     </html>
