@@ -2,14 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: var(--font-inter);
-}
-
-.font-sans {
-  font-family: "Calistoga", serif;
-}
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
