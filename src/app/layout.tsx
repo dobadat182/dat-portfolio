@@ -1,4 +1,3 @@
-import { Calistoga, Roboto } from "next/font/google";
 import { twMerge } from "tailwind-merge";
 import "../styles/globals.css";
 

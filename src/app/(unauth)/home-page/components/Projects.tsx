@@ -1,60 +1,88 @@
 "use client";
 import * as React from "react";
-import Autoplay from "embla-carousel-autoplay";
-
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
-
 import ComponentHeading from "@/components/shared/ComponentHeading";
-import { MagicCard } from "@/components/ui/magic-card";
-import { useRef } from "react";
+import { cn } from "@/lib/utils";
+import Marquee from "@/components/ui/marquee";
+import Image from "next/image";
 
-// const ProjectsData = [
-//   {
-//     name: "Safety Path",
-//     type: "Ecommerce",
-//     status: "Running",
-//     image: "",
-//     desc: "",
-//     techstack: [
-//       { image: "", title: "Wordpress" },
-//       { image: "", title: "Shopify" },
-//       { image: "", title: "Next" },
-//     ],
-//   },
-//   {
-//     name: "Lacoste",
-//     type: "Ecommerce",
-//     status: "Running",
-//     image: "",
-//     desc: "",
-//     techstack: [
-//       { image: "", title: "Wordpress" },
-//       { image: "", title: "Shopify" },
-//       { image: "", title: "Next" },
-//     ],
-//   },
-//   {
-//     name: "VietnamBooking",
-//     type: "Ecommerce",
-//     status: "Developing",
-//     image: "",
-//     desc: "",
-//     techstack: [
-//       { image: "", title: "Wordpress" },
-//       { image: "", title: "Shopify" },
-//       { image: "", title: "Next" },
-//     ],
-//   },
-// ];
+const reviews = [
+  {
+    name: "Jack",
+    username: "@jack",
+    body: "I've never seen anything like this before. It's amazing. I love it.",
+    img: "https://avatar.vercel.sh/jack",
+  },
+  {
+    name: "Jill",
+    username: "@jill",
+    body: "I don't know what to say. I'm speechless. This is amazing.",
+    img: "https://avatar.vercel.sh/jill",
+  },
+  {
+    name: "John",
+    username: "@john",
+    body: "I'm at a loss for words. This is amazing. I love it.",
+    img: "https://avatar.vercel.sh/john",
+  },
+  {
+    name: "Jane",
+    username: "@jane",
+    body: "I'm at a loss for words. This is amazing. I love it.",
+    img: "https://avatar.vercel.sh/jane",
+  },
+  {
+    name: "Jenny",
+    username: "@jenny",
+    body: "I'm at a loss for words. This is amazing. I love it.",
+    img: "https://avatar.vercel.sh/jenny",
+  },
+  {
+    name: "James",
+    username: "@james",
+    body: "I'm at a loss for words. This is amazing. I love it.",
+    img: "https://avatar.vercel.sh/james",
+  },
+];
+
+const firstRow = reviews.slice(0, reviews.length / 2);
+const secondRow = reviews.slice(reviews.length / 2);
+
+const ReviewCard = ({
+  img,
+  name,
+  username,
+  body,
+}: {
+  img: string;
+  name: string;
+  username: string;
+  body: string;
+}) => {
+  return (
+    <figure
+      className={cn(
+        "relative w-64 cursor-pointer overflow-hidden rounded-xl border p-4",
+        // light styles
+        "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
+        // dark styles
+        "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]"
+      )}
+    >
+      <div className="flex flex-row items-center gap-2">
+        <Image className="rounded-full" width="32" height="32" alt="" src={img} />
+        <div className="flex flex-col">
+          <figcaption className="text-sm font-medium dark:text-white">{name}</figcaption>
+          <p className="text-xs font-medium dark:text-white/40">{username}</p>
+        </div>
+      </div>
+      <blockquote className="mt-2 text-sm">{body}</blockquote>
+    </figure>
+  );
+};
 
 const FeaturedProjects = () => {
-  const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
-
   return (
-    <div
-      id="featured-projects"
-      className="flex gap-10 flex-col md:py-10 items-center justify-center bg-background"
-    >
+    <div id="featured-projects" className="flex flex-col md:py-10 items-center justify-center bg-background">
       <ComponentHeading
         title={"Featured Projects"}
         desc={
@@ -62,48 +90,21 @@ const FeaturedProjects = () => {
         }
       />
 
-      <div className="w-full container">
-        <Carousel
-          plugins={[plugin.current]}
-          className="w-full"
-          onMouseEnter={plugin.current.stop}
-          onMouseLeave={plugin.current.reset}
-        >
-          {/* <CarouselPrevious />
-          <CarouselNext /> */}
-          <CarouselContent>
-            {Array.from({ length: 10 }).map((_, index) => (
-              <CarouselItem className="pt-1 md:basis-1/3" key={index}>
-                <MagicCard className="p-4 text-center" gradientColor={"#ff9f1c"}>
-                  <div className="w-full aspect-square max-h-56 bg-slate-200 rounded-xl relative">
-                    <div className="absolute top-0 right-0 p-3">Is Running</div>
-                    <div className="absolute bottom-0 left-0 p-3">
-                      <ul className="flex gap-2">
-                        <li className="px-3 py-1 border rounded-full border-slate-300">
-                          <span className="text-zinc-800 text-sm font-medium">Wordpress</span>
-                        </li>
-                        <li className="px-3 py-1 border rounded-full border-slate-300">
-                          <span className="text-zinc-800 text-sm font-medium">NextJS</span>
-                        </li>
-                        <li className="px-3 py-1 border rounded-full border-slate-300">
-                          <span className="text-zinc-800 text-sm font-medium">Shopify</span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div className="mt-5 text-left">
-                    <h4 className="text-xl font-bold">SafetyPath</h4>
-                    <p className="mt-3 text-left text-base line-clamp-3 text-zinc-500">
-                      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi voluptates atque, quo
-                      delectus excepturi, quae error eos ipsam praesentium eius Modi voluptates atque, quo
-                      delectus excepturi, quae error eos ipsam praesentium eius
-                    </p>
-                  </div>
-                </MagicCard>
-              </CarouselItem>
+      <div className="p-6 container">
+        <div className="relative flex w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background">
+          <Marquee pauseOnHover className="[--duration:20s]">
+            {firstRow.map((review) => (
+              <ReviewCard key={review.username} {...review} />
             ))}
-          </CarouselContent>
-        </Carousel>
+          </Marquee>
+          <Marquee reverse pauseOnHover className="[--duration:20s]">
+            {secondRow.map((review) => (
+              <ReviewCard key={review.username} {...review} />
+            ))}
+          </Marquee>
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white dark:from-background"></div>
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white dark:from-background"></div>
+        </div>
       </div>
     </div>
   );

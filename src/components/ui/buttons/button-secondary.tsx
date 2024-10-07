@@ -1,11 +1,6 @@
 import { RainbowButton } from "../rainbow-button";
 
-const Props = {
-  text?: string;
-  className?: string;
-}
-
-const SecondaryButton = () => {
+const ButtonSecondary = () => {
   return (
     <RainbowButton>
       <div className="flex cursor-pointer text-sm">
@@ -15,4 +10,4 @@ const SecondaryButton = () => {
   );
 };
 
-export default SecondaryButton;
+export default ButtonSecondary;

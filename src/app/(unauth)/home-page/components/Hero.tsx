@@ -1,6 +1,4 @@
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { ArrowDownIcon, Download } from "lucide-react";
+import { Download } from "lucide-react";
 import { RainbowButton } from "@/components/ui/rainbow-button";
 import Ripple from "@/components/ui/ripple";
 import SparklesText from "@/components/ui/sparkles-text";
@@ -15,29 +13,15 @@ const Hero = () => {
         />
 
         <div className="text-base md:text-lg text-center text-zinc-500">
-          <p>A seasoned web developer specializing in Wordpress and Next/React.</p>
-          <p>
-            I create high-quality, scalable web solutions that focus on delivering seamless user experiences
-            with clean, maintainable code.
-          </p>
+          <p>I am a Vietnamese software developer</p>
+          <p>Dedicated to delivering high-quality and flawless products to clients.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 justify-between">
-          <Button
-            variant={"outline"}
-            className="h-11 px-8 py-2 inline-flex items-center justify-center rounded-xl font-medium"
-          >
-            <Link href={"#featured-projects"}>
-              <span>Explore My Work</span>
-            </Link>
-            <ArrowDownIcon className="ml-3 size-[18px] mb-1" />
-          </Button>
-          <RainbowButton>
-            <div className="flex cursor-pointer text-sm">
-              <span>Download CV</span> <Download className="ml-3 size-[18px]" />
-            </div>
-          </RainbowButton>
-        </div>
+        <RainbowButton>
+          <div className="flex cursor-pointer text-sm">
+            <span>Download CV</span> <Download className="ml-3 size-[18px]" />
+          </div>
+        </RainbowButton>
       </div>
 
       <Ripple />
