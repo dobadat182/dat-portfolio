@@ -12,13 +12,13 @@ const Hero = () => {
           text="Dat Do"
         />
 
-        {/* <div className="text-center text-tertiary">
+        <div className="text-center text-tertiary">
           <p>I am a Vietnamese software developer</p>
           <p>
             Dedicated to delivering high-quality and flawless products to
             clients.
           </p>
-        </div> */}
+        </div>
 
         <RainbowButton>
           <div className="flex cursor-pointer text-sm">
