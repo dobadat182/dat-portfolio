@@ -1,75 +1,107 @@
-import React from "react";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import Link from "next/link";
-import { IconBrandInstagram, IconBrandLinkedin, IconFileText, IconMail } from "@tabler/icons-react";
+import {
+  IconBrandInstagram,
+  IconBrandLinkedin,
+  IconFileText,
+  IconMail,
+} from "@tabler/icons-react";
+import { H3, Heading1 } from "@/components/shared/Typo";
+import ImageMe from "@/assets/images/datdo.jpg";
+import Image from "next/image";
+import NumberTicker from "@/components/ui/number-ticker";
 
-type BadgeProps = {
+type ProfileItemProps = {
   link: string;
   text?: string;
   icon?: any;
 };
-type ItemProps = {
-  title?: string;
+
+type ExperienceItemProps = {
+  value: number;
   desc?: string;
+  text?: string;
 };
 
-const Item = ({ title, desc }: ItemProps) => {
+const ExperiencesItem = ({ value, desc, text }: ExperienceItemProps) => {
   return (
-    <div className="flex flex-col gap-5 items-center justify-center">
-      <h3 className="text-6xl font-extrabold">{title}</h3>
-      <p className="text-lg">{desc}</p>
+    <div className="flex flex-col items-center justify-center gap-2 md:gap-5">
+      <Heading1>
+        <NumberTicker value={value} />
+        {text}
+      </Heading1>
+      <p className="text-center text-tertiary">{desc}</p>
     </div>
   );
 };
 
-const Badged = ({ link, text, icon }: BadgeProps) => {
+const ProfileItem = ({ link, text, icon }: ProfileItemProps) => {
   return (
     <Link
       href={link}
-      className="hover:-translate-y-1 transition rounded-lg border backdrop-blur-sm shadow-lg flex items-center gap-1 px-5 py-1"
+      className="flex items-center gap-1 rounded-lg border px-4 py-1 shadow-lg backdrop-blur-sm transition hover:-translate-y-1 md:px-5"
     >
-      {icon} <span className="text-sm font-medium">{text}</span>
+      {icon} <span className="text-xs font-medium md:text-sm">{text}</span>
     </Link>
   );
 };
 
 const About = () => {
   return (
-    <div className="flex gap-14 flex-col items-center justify-center bg-background p-14">
-      <div className="max-w-screen-md w-full flex justify-between">
-        <div className="flex gap-4">
-          <Avatar className="w-20 h-20 rounded border shadow-2xl">
-            <AvatarImage src="https://github.com/shadcn.png" />
-            <AvatarFallback>CN</AvatarFallback>
+    <div className="flex flex-col items-center gap-10">
+      <div className="mt-10 flex w-full max-w-screen-md justify-between px-5 md:px-0">
+        <div className="flex gap-5">
+          <Avatar className="h-20 w-20 rounded border shadow-2xl md:h-24 md:w-24">
+            <Image src={ImageMe} alt="Dat Do" />
+            <AvatarFallback>Dat Do</AvatarFallback>
           </Avatar>
 
           <div>
-            <h2 className="text-2xl font-semibold">Davis D.</h2>
-            <p className="text-base text-zinc-500">Frontend Developer - Freelancer - Maker</p>
+            <H3>Davis D.</H3>
+            <p className="text-tertiary">Frontend Developer - Freelancer</p>
           </div>
         </div>
 
-        <p className="text-base font-medium">Viet Nam, HCM</p>
+        <p className="hidden font-bold md:block">VietNam, HCM</p>
       </div>
 
-      <div className="max-w-screen-md w-full flex gap-4 py-5">
-        <Badged text="Resume" link="test" icon={<IconFileText size={18} strokeWidth={1.4} />} />
-        <Badged text="Get in touch" link="test" icon={<IconMail size={18} strokeWidth={1.4} />} />
-        <Badged link="test" icon={<IconBrandLinkedin size={18} strokeWidth={1.8} />} />
-        <Badged link="test" icon={<IconBrandInstagram size={18} strokeWidth={1.8} />} />
+      <div className="flex w-full max-w-screen-md items-center gap-3 px-5 md:gap-4 md:px-0">
+        <ProfileItem
+          text="Resume"
+          link="test"
+          icon={<IconFileText className="w-4" strokeWidth={1.4} />}
+        />
+        <ProfileItem
+          text="Get in touch"
+          link="test"
+          icon={<IconMail className="w-4" strokeWidth={1.4} />}
+        />
+        <ProfileItem
+          link="test"
+          icon={<IconBrandLinkedin className="w-4" strokeWidth={1.8} />}
+        />
+        <ProfileItem
+          link="test"
+          icon={<IconBrandInstagram className="w-4" strokeWidth={1.8} />}
+        />
       </div>
 
-      <div className="max-w-screen-lg w-full flex justify-between">
-        <p className="text-3xl">
-          A seasoned web developer specializing in Wordpress and Next/React. I create high-quality, scalable
-          web solutions that focus on delivering seamless user experiences with clean, maintainable code.
-        </p>
+      <div className="w-full border-y-2 px-5 py-8">
+        <div className="mx-auto flex max-w-screen-md justify-between">
+          <ExperiencesItem value={3} text="+" desc="Years of Experience" />
+          <ExperiencesItem value={14} text="+" desc="Completed Projects" />
+          <ExperiencesItem value={3} desc="Companies Worked" />
+        </div>
       </div>
 
-      <div className="max-w-screen-md flex justify-between w-full border-b pb-10">
-        <Item title="3+" desc="Years of Experience" />
-        <Item title="10+" desc="Projects" />
-        <Item title="3" desc="Companies Worked" />
+      <div className="flex w-full max-w-screen-lg items-center px-5 md:px-0">
+        <h2 className="leading scroll-m-20 text-2xl font-extrabold md:text-center lg:text-4xl">
+          A seasoned web developer specializing in{" "}
+          <span className="border-b-4 border-primary">Wordpress</span> and{" "}
+          <span className="border-b-4 border-primary">Next/React</span>. I
+          create high-quality, scalable web solutions that focus on delivering
+          seamless user experiences with clean, maintainable code.
+        </h2>
       </div>
     </div>
   );

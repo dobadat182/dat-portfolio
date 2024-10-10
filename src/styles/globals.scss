@@ -2,6 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  font-family: var(--font-inter);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--font-yeseva-one);
+}
+
+p {
+  @apply text-sm;
+
+  @media (min-width: 768px) {
+    @apply text-base;
+  }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -10,16 +30,17 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: #f5f7f8;
     --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
-    --primary: 240 5.9% 10%;
+    --primary: #f4ce14;
     --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
+    --secondary: #495e57;
     --secondary-foreground: 240 5.9% 10%;
+    --tertiary: #45474b;
     --muted: 240 4.8% 95.9%;
     --muted-foreground: 240 3.8% 46.1%;
     --accent: 240 4.8% 95.9%;
@@ -35,6 +56,7 @@
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
+
     --color-1: 0 100% 63%;
     --color-2: 270 100% 63%;
     --color-3: 210 100% 63%;

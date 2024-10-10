@@ -5,17 +5,20 @@ import SparklesText from "@/components/ui/sparkles-text";
 
 const Hero = () => {
   return (
-    <div className="flex items-center justify-center relative h-screen w-full bg-background">
-      <div className="absolute max-w-2xl z-10 m-auto p-5 md:p-0 flex flex-col gap-5 md:gap-10">
+    <div className="relative flex h-screen w-full items-center justify-center">
+      <div className="absolute z-10 m-auto flex max-w-2xl flex-col gap-5 p-5 md:gap-20 md:p-0">
         <SparklesText
-          className="font-sans whitespace-pre-wrap text-center text-8xl md:text-9xl font-medium tracking-tighter text-primary"
-          text="Davis Do"
+          className="whitespace-pre-wrap text-center font-sans text-8xl font-medium tracking-tighter md:text-9xl"
+          text="Dat Do"
         />
 
-        <div className="text-base md:text-lg text-center text-zinc-500">
+        {/* <div className="text-center text-tertiary">
           <p>I am a Vietnamese software developer</p>
-          <p>Dedicated to delivering high-quality and flawless products to clients.</p>
-        </div>
+          <p>
+            Dedicated to delivering high-quality and flawless products to
+            clients.
+          </p>
+        </div> */}
 
         <RainbowButton>
           <div className="flex cursor-pointer text-sm">
