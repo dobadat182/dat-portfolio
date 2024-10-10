@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="w-full bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] py-10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-0 font-sans text-3xl text-white md:items-end md:text-5xl">
-          <span>Let's work together</span>
+          <span>Let&apos;s work together</span>
           <a
             className="transition-colors hover:text-primary"
             href="mailto:badat336@gmail.com"

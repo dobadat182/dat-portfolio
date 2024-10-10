@@ -9,7 +9,6 @@ import {
 import { H3, Heading1 } from "@/components/shared/Typo";
 import ImageMe from "@/assets/images/datdo.jpg";
 import Image from "next/image";
-import NumberTicker from "@/components/ui/number-ticker";
 
 type ProfileItemProps = {
   link: string;
@@ -27,8 +26,7 @@ const ExperiencesItem = ({ value, desc, text }: ExperienceItemProps) => {
   return (
     <div className="flex flex-col items-center justify-center gap-2 md:gap-5">
       <Heading1>
-        <NumberTicker value={value} />
-        {text}
+        {value} {text}
       </Heading1>
       <p className="text-center text-tertiary">{desc}</p>
     </div>
