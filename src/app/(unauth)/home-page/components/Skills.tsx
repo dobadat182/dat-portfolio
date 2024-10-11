@@ -29,8 +29,8 @@ type BadgeProps = {
 
 const Badge = ({ text, icon }: BadgeProps) => {
   return (
-    <div className="inline-flex items-center gap-1 rounded-lg border bg-slate-50 px-5 py-1 shadow-md backdrop-blur-sm transition hover:-translate-y-1">
-      {icon} <p>{text}</p>
+    <div className="inline-flex items-center gap-2 rounded-lg border bg-slate-50 px-5 py-2 shadow-md backdrop-blur-sm transition hover:-translate-y-1">
+      {icon} <p className="text-sm font-medium">{text}</p>
     </div>
   );
 };
@@ -92,7 +92,7 @@ const Skills = () => {
                 <Badge icon={<IconBrandNextjs size={18} />} text="Next" />
               </li>
               <li>
-                <Badge icon={<IconBrandNuxt />} text="Nuxt" />
+                <Badge icon={<IconBrandNuxt size={18} />} text="Nuxt" />
               </li>
               <li>
                 <Badge
@@ -144,7 +144,10 @@ const Skills = () => {
                 <Badge icon={<IconBrandDocker size={18} />} text="Docker" />
               </li>
               <li>
-                <Badge icon={<IconBrandBitbucket />} text="Bitbucket" />
+                <Badge
+                  icon={<IconBrandBitbucket size={18} />}
+                  text="Bitbucket"
+                />
               </li>
               <li>
                 <Badge icon={<IconBrandVercel size={18} />} text="Vercel" />

@@ -35,7 +35,49 @@ const reviews = [
     img: "https://avatar.vercel.sh/jenny",
   },
   {
-    name: "VietnamBooking",
+    name: "Vietnam Booking",
+    username: "@james",
+    body: "I'm at a loss for words. This is amazing. I love it.",
+    img: "https://avatar.vercel.sh/james",
+  },
+  {
+    name: "Boss Hunting",
+    username: "@james",
+    body: "I'm at a loss for words. This is amazing. I love it.",
+    img: "https://avatar.vercel.sh/james",
+  },
+  {
+    name: "It Take A Village",
+    username: "@james",
+    body: "I'm at a loss for words. This is amazing. I love it.",
+    img: "https://avatar.vercel.sh/james",
+  },
+  {
+    name: "Conecta",
+    username: "@james",
+    body: "I'm at a loss for words. This is amazing. I love it.",
+    img: "https://avatar.vercel.sh/james",
+  },
+  {
+    name: "Integral Lighting",
+    username: "@james",
+    body: "I'm at a loss for words. This is amazing. I love it.",
+    img: "https://avatar.vercel.sh/james",
+  },
+  {
+    name: "Bongiorno Group",
+    username: "@james",
+    body: "I'm at a loss for words. This is amazing. I love it.",
+    img: "https://avatar.vercel.sh/james",
+  },
+  {
+    name: "Athletics Victoria",
+    username: "@james",
+    body: "I'm at a loss for words. This is amazing. I love it.",
+    img: "https://avatar.vercel.sh/james",
+  },
+  {
+    name: "Reveal Group",
     username: "@james",
     body: "I'm at a loss for words. This is amazing. I love it.",
     img: "https://avatar.vercel.sh/james",
@@ -90,6 +132,8 @@ const FeaturedProjects = () => {
           {reviews.map((review) => (
             <ReviewCard key={review.username} {...review} />
           ))}
+
+          <ReviewCard key={1} name={"Continue journey..."} />
         </div>
       </div>
     </div>
