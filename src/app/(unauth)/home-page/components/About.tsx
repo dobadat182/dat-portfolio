@@ -24,9 +24,10 @@ type ExperienceItemProps = {
 
 const ExperiencesItem = ({ value, desc, text }: ExperienceItemProps) => {
   return (
-    <div className="flex flex-col items-center justify-center gap-2 md:gap-5">
+    <div className="flex flex-col items-center justify-center gap-2 sm:gap-5">
       <Heading1>
-        {value} {text}
+        {value}
+        {text}
       </Heading1>
       <p className="text-center text-tertiary">{desc}</p>
     </div>
@@ -47,8 +48,8 @@ const ProfileItem = ({ link, text, icon }: ProfileItemProps) => {
 const About = () => {
   return (
     <div className="flex flex-col items-center gap-10">
-      <div className="mt-10 flex w-full max-w-screen-md justify-between px-5 md:px-0">
-        <div className="flex gap-5">
+      <div className="mt-10 flex w-full max-w-screen-md justify-between px-5 lg:px-0">
+        <div className="flex gap-5 px-5 sm:px-0">
           <Avatar className="h-20 w-20 rounded border shadow-2xl md:h-24 md:w-24">
             <Image src={ImageMe} alt="Dat Do" />
             <AvatarFallback>Dat Do</AvatarFallback>
@@ -63,7 +64,7 @@ const About = () => {
         <p className="hidden font-bold md:block">VietNam, HCM</p>
       </div>
 
-      <div className="flex w-full max-w-screen-md items-center gap-3 px-5 md:gap-4 md:px-0">
+      <div className="flex w-full max-w-screen-md items-center gap-3 px-5 md:gap-4 lg:px-0">
         <ProfileItem
           text="Resume"
           link="test"

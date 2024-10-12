@@ -1,26 +1,10 @@
-"use client";
-
-import React, { useEffect } from "react";
-import { throttle } from "lodash";
-import { usePathname } from "next/navigation";
 import Footer from "@/components/shared/Footer";
+import Navbar from "@/components/shared/Navbar";
 
 const PrimaryLayout = ({ children }: DefaultProps) => {
-  const pathname = usePathname();
-
-  useEffect(() => {
-    const handleScroll = throttle(() => {}, 200);
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <main
-      className={`${
-        pathname === "/" && "home"
-      } relative overflow-hidden [&::-webkit-scrollbar-thumb]:bg-gray-300 [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar]:w-2`}
-    >
+    <main className="overflow-hidden [&::-webkit-scrollbar-thumb]:bg-gray-300 [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar]:w-2">
+      <Navbar />
       <div>{children}</div>
       <Footer />
     </main>

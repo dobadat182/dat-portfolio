@@ -14,7 +14,8 @@ h5 {
   font-family: var(--font-yeseva-one);
 }
 
-p {
+p,
+a {
   @apply text-sm;
 
   @media (min-width: 768px) {

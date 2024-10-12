@@ -1,3 +1,4 @@
+import { ThemeProvider } from "@/providers/theme-provider";
 import "../styles/globals.scss";
 import { Inter, Yeseva_One } from "next/font/google";
 
@@ -19,8 +20,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${yeseva_one.variable} antialiased scroll-smooth`}>
-      <body>{children}</body>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${inter.variable} ${yeseva_one.variable} scroll-smooth antialiased`}
+    >
+      <head />
+      <body>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
