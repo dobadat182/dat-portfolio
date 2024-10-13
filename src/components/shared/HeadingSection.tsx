@@ -14,7 +14,7 @@ const HeadingSection = ({ title, desc, variants = "center" }: Props) => {
     >
       <Heading1>{title}</Heading1>
       <p
-        className={`mt-2 max-w-md text-tertiary md:mt-4 ${variants === "center" ? "text-center" : "text-start"}`}
+        className={`mt-2 max-w-md text-tertiary dark:text-white md:mt-4 ${variants === "center" ? "text-center" : "text-start"}`}
       >
         {desc}
       </p>

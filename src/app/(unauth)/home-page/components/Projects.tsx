@@ -1,102 +1,134 @@
 "use client";
-import * as React from "react";
-import { cn } from "@/lib/utils";
+
 import ComponentHeading from "@/components/shared/HeadingSection";
 
 const reviews = [
   {
+    id: 1,
     name: "Safety Path",
-    username: "@safety-path",
+    code: "@stp",
     body: "I've never seen anything like this before. It's amazing. I love it.",
     img: "https://avatar.vercel.sh/jack",
+    techs: ["WordPress"],
   },
   {
+    id: 2,
     name: "Intergral Lighting",
-    username: "@jill",
+    code: "@itl",
     body: "I don't know what to say. I'm speechless. This is amazing.",
     img: "https://avatar.vercel.sh/jill",
+    techs: ["WordPress"],
   },
   {
+    id: 3,
     name: "Lacoste Viet Nam",
-    username: "@john",
+    code: "@lcv",
     body: "I'm at a loss for words. This is amazing. I love it.",
     img: "https://avatar.vercel.sh/john",
+    techs: ["WordPress"],
   },
   {
+    id: 4,
     name: "Mintlabo",
-    username: "@jane",
+    code: "@mlb",
     body: "I'm at a loss for words. This is amazing. I love it.",
     img: "https://avatar.vercel.sh/jane",
+    techs: ["WordPress"],
   },
   {
+    id: 5,
     name: "Jiffy",
-    username: "@jenny",
+    code: "@jf",
     body: "I'm at a loss for words. This is amazing. I love it.",
     img: "https://avatar.vercel.sh/jenny",
+    techs: ["Nuxt"],
   },
   {
+    id: 6,
     name: "Vietnam Booking",
-    username: "@james1",
+    code: "@vnb",
     body: "I'm at a loss for words. This is amazing. I love it.",
     img: "https://avatar.vercel.sh/james",
+    techs: ["Next"],
   },
   {
+    id: 7,
     name: "Boss Hunting",
-    username: "@james2",
+    code: "@bh",
     body: "I'm at a loss for words. This is amazing. I love it.",
     img: "https://avatar.vercel.sh/james",
+    techs: ["WordPress"],
   },
   {
+    id: 8,
     name: "It Take A Village",
-    username: "@james3",
+    code: "@itv",
     body: "I'm at a loss for words. This is amazing. I love it.",
     img: "https://avatar.vercel.sh/james",
+    techs: ["WordPress"],
   },
   {
+    id: 9,
     name: "Conecta",
-    username: "@james4",
+    code: "@cnt",
     body: "I'm at a loss for words. This is amazing. I love it.",
     img: "https://avatar.vercel.sh/james",
+    techs: ["WordPress"],
   },
   {
-    name: "Integral Lighting",
-    username: "@james5",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/james",
-  },
-  {
+    id: 10,
     name: "Bongiorno Group",
-    username: "@james6",
+    code: "@bgg",
     body: "I'm at a loss for words. This is amazing. I love it.",
     img: "https://avatar.vercel.sh/james",
+    techs: ["WordPress"],
   },
   {
+    id: 11,
     name: "Athletics Victoria",
-    username: "@james7",
+    code: "@ath",
     body: "I'm at a loss for words. This is amazing. I love it.",
     img: "https://avatar.vercel.sh/james",
+    techs: ["WordPress"],
   },
   {
+    id: 12,
     name: "Reveal Group",
-    username: "@james8",
+    code: "@rvg ",
     body: "I'm at a loss for words. This is amazing. I love it.",
     img: "https://avatar.vercel.sh/james",
+    techs: ["WordPress"],
   },
 ];
 
-const ReviewCard = ({ name }: { name: string }) => {
+type ReviewCardProps = {
+  id: number;
+  name: string;
+  code: string;
+  body: string;
+  img: string;
+  techs: string[];
+};
+
+const ReviewCard = ({ name, techs }: ReviewCardProps) => {
   return (
-    <figure
-      className={cn(
-        "transition- relative w-full cursor-pointer overflow-hidden rounded-xl transition-transform hover:-translate-y-1",
-        // light styles
-        "bg-gray-950/[.01]",
-        // dark styles
-        "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
-      )}
-    >
+    <figure className="transition- w-full cursor-pointer overflow-hidden rounded-xl bg-gray-950/[.01] transition-transform hover:-translate-y-1">
       <div className="flex flex-col gap-4">
-        <div className="h-56 w-full rounded-lg bg-zinc-300"></div>
+        <div className="relative h-56 w-full overflow-hidden rounded-lg bg-zinc-300">
+          {/* <Image
+            src={img}
+            alt={name}
+            width={0}
+            height={0}
+            className="h-full w-full"
+          /> */}
+
+          <div className="absolute bottom-0 left-0 px-3 pb-3">
+            <span className="rounded-full bg-slate-50 px-3 py-1 text-xs font-medium text-tertiary shadow-xl">
+              {techs?.map((element) => element)}
+            </span>
+          </div>
+        </div>
         <figcaption className="text-base font-medium dark:text-white">
           {name}
         </figcaption>
@@ -109,7 +141,7 @@ const FeaturedProjects = () => {
   return (
     <div
       id="featured-projects"
-      className="mb-20 flex flex-col items-center justify-center px-5 md:px-0"
+      className="mb-20 flex flex-col items-center justify-center px-5"
     >
       <ComponentHeading
         title={"Featured Projects"}
@@ -123,14 +155,14 @@ const FeaturedProjects = () => {
           <ul className="flex gap-5">
             <li className="underline">All</li>
             <li>E-Commerce</li>
-            <li>Wordpress</li>
+            <li>WordPress</li>
             <li>Sapo</li>
             <li>Wix</li>
           </ul>
         </div>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-5">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-5 lg:grid-cols-3">
           {reviews.map((review) => (
-            <ReviewCard key={review.username} {...review} />
+            <ReviewCard key={review.id} {...review} />
           ))}
         </div>
       </div>
