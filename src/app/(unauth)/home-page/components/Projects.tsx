@@ -1,6 +1,7 @@
 "use client";
 
 import ComponentHeading from "@/components/shared/HeadingSection";
+import Link from "next/link";
 
 const reviews = [
   {
@@ -10,6 +11,7 @@ const reviews = [
     body: "I've never seen anything like this before. It's amazing. I love it.",
     img: "https://avatar.vercel.sh/jack",
     techs: ["WordPress"],
+    url: "https://shop.smarterlite.com/",
   },
   {
     id: 2,
@@ -18,6 +20,7 @@ const reviews = [
     body: "I don't know what to say. I'm speechless. This is amazing.",
     img: "https://avatar.vercel.sh/jill",
     techs: ["WordPress"],
+    url: "https://www.integrallighting.com.au/",
   },
   {
     id: 3,
@@ -26,6 +29,7 @@ const reviews = [
     body: "I'm at a loss for words. This is amazing. I love it.",
     img: "https://avatar.vercel.sh/john",
     techs: ["WordPress"],
+    url: "https://lacoste.com.vn/",
   },
   {
     id: 4,
@@ -34,6 +38,7 @@ const reviews = [
     body: "I'm at a loss for words. This is amazing. I love it.",
     img: "https://avatar.vercel.sh/jane",
     techs: ["WordPress"],
+    url: "https://mintlabo.com/",
   },
   {
     id: 5,
@@ -42,6 +47,7 @@ const reviews = [
     body: "I'm at a loss for words. This is amazing. I love it.",
     img: "https://avatar.vercel.sh/jenny",
     techs: ["Nuxt"],
+    url: "https://getjiffy.co/",
   },
   {
     id: 6,
@@ -66,6 +72,7 @@ const reviews = [
     body: "I'm at a loss for words. This is amazing. I love it.",
     img: "https://avatar.vercel.sh/james",
     techs: ["WordPress"],
+    url: "https://yourvillage.com.au/",
   },
   {
     id: 9,
@@ -82,6 +89,7 @@ const reviews = [
     body: "I'm at a loss for words. This is amazing. I love it.",
     img: "https://avatar.vercel.sh/james",
     techs: ["WordPress"],
+    url: "https://conecta.com.au/",
   },
   {
     id: 11,
@@ -90,6 +98,7 @@ const reviews = [
     body: "I'm at a loss for words. This is amazing. I love it.",
     img: "https://avatar.vercel.sh/james",
     techs: ["WordPress"],
+    url: "https://athsvic.org.au/",
   },
   {
     id: 12,
@@ -98,6 +107,7 @@ const reviews = [
     body: "I'm at a loss for words. This is amazing. I love it.",
     img: "https://avatar.vercel.sh/james",
     techs: ["WordPress"],
+    url: "https://revealgroup.com/",
   },
 ];
 
@@ -105,16 +115,21 @@ type ReviewCardProps = {
   id: number;
   name: string;
   code: string;
+  url?: string | undefined;
   body: string;
   img: string;
   techs: string[];
 };
 
-const ReviewCard = ({ name, techs }: ReviewCardProps) => {
+const ReviewCard = ({ name, techs, url = "" }: ReviewCardProps) => {
   return (
-    <figure className="transition- w-full cursor-pointer overflow-hidden rounded-xl bg-gray-950/[.01] transition-transform hover:-translate-y-1">
+    <div className="transition- w-full cursor-pointer overflow-hidden rounded-xl bg-gray-950/[.01] transition-transform hover:-translate-y-1">
       <div className="flex flex-col gap-4">
-        <div className="relative h-56 w-full overflow-hidden rounded-lg bg-zinc-300">
+        <Link
+          target="_blank"
+          href={url}
+          className="relative h-56 w-full overflow-hidden rounded-lg bg-zinc-300"
+        >
           {/* <Image
             src={img}
             alt={name}
@@ -128,12 +143,16 @@ const ReviewCard = ({ name, techs }: ReviewCardProps) => {
               {techs?.map((element) => element)}
             </span>
           </div>
-        </div>
-        <figcaption className="text-base font-medium dark:text-white">
+        </Link>
+        <Link
+          target="_blank"
+          href={url}
+          className="text-base font-medium dark:text-white"
+        >
           {name}
-        </figcaption>
+        </Link>
       </div>
-    </figure>
+    </div>
   );
 };
 
