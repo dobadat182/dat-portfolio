@@ -44,7 +44,7 @@ export function H4({ children, className }: Props) {
 export function Heading1({ children, className }: Props) {
   return (
     <h2
-      className={`${className} scroll-m-20 text-3xl font-extrabold tracking-tight md:text-4xl`}
+      className={`${className} scroll-m-20 text-4xl font-extrabold tracking-tight sm:text-4xl md:text-5xl`}
     >
       {children}
     </h2>

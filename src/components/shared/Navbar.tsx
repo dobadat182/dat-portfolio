@@ -1,13 +1,12 @@
 "use client";
 
-import React from "react";
 import Link from "next/link";
 import {
+  Book,
   CalendarIcon,
   HomeIcon,
   MailIcon,
   Moon,
-  PencilIcon,
   Sun,
 } from "lucide-react";
 
@@ -37,15 +36,6 @@ const Icons = {
       />
     </svg>
   ),
-  x: (props: IconProps) => (
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}>
-      <title>X</title>
-      <path
-        fill="currentColor"
-        d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"
-      />
-    </svg>
-  ),
   youtube: (props: IconProps) => (
     <svg
       width="32px"
@@ -72,7 +62,7 @@ const Icons = {
 const DATA = {
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
-    { href: "/blog", icon: PencilIcon, label: "Blog" },
+    { href: "/blog", icon: Book, label: "Blog" },
   ],
   contact: {
     social: {
@@ -85,11 +75,6 @@ const DATA = {
         name: "LinkedIn",
         url: "https://www.linkedin.com/in/badat182",
         icon: Icons.linkedin,
-      },
-      X: {
-        name: "X",
-        url: "#",
-        icon: Icons.x,
       },
       email: {
         name: "Send Email",
@@ -123,7 +108,7 @@ export default function Navbar() {
                   </Link>
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p>{item.label}</p>
+                  <p className="text-sm">{item.label}</p>
                 </TooltipContent>
               </Tooltip>
             </DockIcon>
@@ -146,7 +131,7 @@ export default function Navbar() {
                   </Link>
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p>{name}</p>
+                  <p className="text-sm">{name}</p>
                 </TooltipContent>
               </Tooltip>
             </DockIcon>
@@ -154,11 +139,12 @@ export default function Navbar() {
           <Separator orientation="vertical" className="h-full py-2" />
           <DockIcon>
             <Button
-              variant="outline"
+              variant="ghost"
               size="icon"
               onClick={() =>
                 theme === "dark" ? setTheme("light") : setTheme("dark")
               }
+              className="transition-all"
             >
               <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
               <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />

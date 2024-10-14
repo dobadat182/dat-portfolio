@@ -24,12 +24,12 @@ type ExperienceItemProps = {
 
 const ExperiencesItem = ({ value, desc, text }: ExperienceItemProps) => {
   return (
-    <div className="flex flex-col items-center justify-center gap-2 sm:gap-5">
+    <div className="flex flex-col items-center justify-center gap-2 sm:gap-3">
       <Heading1>
         {value}
         {text}
       </Heading1>
-      <p className="text-center text-tertiary">{desc}</p>
+      <p className="text-center">{desc}</p>
     </div>
   );
 };
@@ -47,7 +47,7 @@ const ProfileItem = ({ link, text, icon }: ProfileItemProps) => {
 
 const About = () => {
   return (
-    <div className="flex flex-col items-center gap-10">
+    <div className="background flex flex-col items-center gap-10">
       <div className="mt-10 flex w-full max-w-screen-md justify-between px-5 lg:px-0">
         <div className="flex gap-5 px-5 sm:px-0">
           <Avatar className="h-20 w-20 rounded border shadow-2xl md:h-24 md:w-24">
@@ -88,7 +88,7 @@ const About = () => {
       <div className="w-full border-y-2 px-5 py-8">
         <div className="mx-auto flex max-w-screen-md justify-between">
           <ExperiencesItem value={3} text="+" desc="Years of Experience" />
-          <ExperiencesItem value={14} text="+" desc="Completed Projects" />
+          <ExperiencesItem value={10} text="+" desc="Completed Projects" />
           <ExperiencesItem value={3} desc="Companies Worked" />
         </div>
       </div>
@@ -96,8 +96,8 @@ const About = () => {
       <div className="flex w-full max-w-screen-lg items-center px-5 md:px-0">
         <h2 className="leading scroll-m-20 text-2xl font-extrabold md:text-center lg:text-4xl">
           A seasoned web developer specializing in{" "}
-          <span className="border-b-4 border-primary">Wordpress</span> and{" "}
-          <span className="border-b-4 border-primary">Next/React</span>. I
+          <span className="border-b-2 border-primary">WordPress</span> and{" "}
+          <span className="border-b-2 border-primary">Next/React</span>. I
           create high-quality, scalable web solutions that focus on delivering
           seamless user experiences with clean, maintainable code.
         </h2>
