@@ -170,5 +170,6 @@ export const Skill = {
     { id: 4, name: "BarbarJS" },
     { id: 5, name: "Algolia" },
     { id: 6, name: "WooCommerce" },
+    { id: 7, name: "Redux (Toolkit / Saga / Thunk)" },
   ],
 };

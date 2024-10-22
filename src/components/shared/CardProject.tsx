@@ -20,7 +20,7 @@ const CardProject = ({ name, techs, url = "" }: CardProps) => {
           className="relative h-56 w-full overflow-hidden rounded-lg bg-zinc-300"
         >
           <div className="absolute bottom-0 left-0 px-3 pb-3">
-            <span className="rounded-full bg-slate-50 px-3 py-1 text-xs font-medium shadow-xl">
+            <span className="rounded-full bg-slate-50 px-3 py-1 text-xs font-medium shadow-xl dark:text-zinc-500">
               {techs?.map((element) => element)}
             </span>
           </div>

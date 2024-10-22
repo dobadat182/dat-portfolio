@@ -38,6 +38,7 @@ const ProfileItem = ({ link, text, icon }: ProfileItemProps) => {
   return (
     <Link
       href={link}
+      scroll={false}
       className="flex items-center gap-1 rounded-lg border px-4 py-1 shadow-lg backdrop-blur-sm transition hover:-translate-y-1 md:px-5"
     >
       {icon} <span className="text-xs font-medium md:text-sm">{text}</span>
@@ -57,7 +58,9 @@ const About = () => {
 
           <div>
             <H3>Davis D.</H3>
-            <p className="text-tertiary">Frontend Developer - Freelancer</p>
+            <p className="text-xs md:text-sm">
+              Frontend Developer - Freelancer
+            </p>
           </div>
         </div>
 
@@ -67,21 +70,21 @@ const About = () => {
       <div className="flex w-full max-w-screen-md items-center gap-3 px-5 md:gap-4 lg:px-0">
         <ProfileItem
           text="Resume"
-          link="test"
+          link="/"
           icon={<IconFileText className="w-4" strokeWidth={1.4} />}
         />
         <ProfileItem
           text="Get in touch"
-          link="test"
+          link="mailto:badat336@gmail.com"
           icon={<IconMail className="w-4" strokeWidth={1.4} />}
         />
         <ProfileItem
-          link="test"
-          icon={<IconBrandLinkedin className="w-4" strokeWidth={1.8} />}
+          link="https://www.linkedin.com/in/badat182/"
+          icon={<IconBrandLinkedin className="w-4" strokeWidth={1.6} />}
         />
         <ProfileItem
-          link="test"
-          icon={<IconBrandInstagram className="w-4" strokeWidth={1.8} />}
+          link="https://www.instagram.com/dbadat182/"
+          icon={<IconBrandInstagram className="w-4" strokeWidth={1.6} />}
         />
       </div>
 

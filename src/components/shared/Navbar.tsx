@@ -76,7 +76,7 @@ const DATA = {
         url: "https://www.linkedin.com/in/badat182",
         icon: Icons.linkedin,
       },
-      email: {
+      Email: {
         name: "Send Email",
         url: "#",
         icon: Icons.email,
@@ -89,7 +89,7 @@ export default function Navbar() {
   const { theme, setTheme } = useTheme();
 
   return (
-    <div className="fixed bottom-5 z-50 w-full">
+    <nav className="fixed bottom-5 z-50 w-full">
       <TooltipProvider>
         <Dock direction="middle">
           {DATA.navbar.map((item) => (
@@ -98,6 +98,7 @@ export default function Navbar() {
                 <TooltipTrigger asChild>
                   <Link
                     href={item.href}
+                    scroll={false}
                     aria-label={item.label}
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
@@ -131,28 +132,37 @@ export default function Navbar() {
                   </Link>
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p className="text-sm">{name}</p>
+                  <p className="text-sm">{social.name}</p>
                 </TooltipContent>
               </Tooltip>
             </DockIcon>
           ))}
           <Separator orientation="vertical" className="h-full py-2" />
           <DockIcon>
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() =>
-                theme === "dark" ? setTheme("light") : setTheme("dark")
-              }
-              className="transition-all"
-            >
-              <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-              <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-              <span className="sr-only">Toggle theme</span>
-            </Button>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={() =>
+                    theme === "dark" ? setTheme("light") : setTheme("dark")
+                  }
+                  className="transition-all"
+                >
+                  <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                  <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                  <span className="sr-only">Toggle theme</span>
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p className="text-sm">
+                  {theme === "dark" ? "Light" : "Dark"} Mode
+                </p>
+              </TooltipContent>
+            </Tooltip>
           </DockIcon>
         </Dock>
       </TooltipProvider>
-    </div>
+    </nav>
   );
 }

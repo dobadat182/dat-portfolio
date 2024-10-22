@@ -1,7 +1,7 @@
-import About from "./components/About";
-import Hero from "./components/Hero";
-import FeaturedProjects from "./components/Projects";
-import Skills from "./components/Skills";
+import About from "../sections/About";
+import Hero from "../sections/Hero";
+import FeaturedProjects from "../sections/Projects";
+import Skills from "../sections/Skills";
 
 const HomePage = () => {
   return (
