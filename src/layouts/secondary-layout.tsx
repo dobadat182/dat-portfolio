@@ -1,7 +1,9 @@
-import React from "react";
-
-const SecondaryLayout = () => {
-  return <div>Secondary Layout</div>;
+const SecondaryLayout = ({ children }: DefaultProps) => {
+  return (
+    <>
+      <main>{children}</main>
+    </>
+  );
 };
 
 export default SecondaryLayout;

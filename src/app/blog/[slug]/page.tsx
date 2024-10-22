@@ -1,13 +1,7 @@
-"use client";
-
-import { H1 } from "@/components/shared/Typo";
+import BlogDetail from "@/components/pages/blog/blog-detail";
 
 const page = () => {
-  return (
-    <div className="">
-      <H1>Blog Detail</H1>
-    </div>
-  );
+  return <BlogDetail />;
 };
 
 export default page;

@@ -1,4 +1,4 @@
-import { H1 } from "../shared/Typo";
+import { H1 } from "@/components/shared/Typo";
 
 const BlogPage = () => {
   return (
