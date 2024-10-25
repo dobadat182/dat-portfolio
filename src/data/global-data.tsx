@@ -76,6 +76,7 @@ export const Project = [
     body: "I'm at a loss for words. This is amazing. I love it.",
     img: "https://avatar.vercel.sh/james",
     techs: ["WordPress"],
+    url: "https://conecta.com.au/",
   },
   {
     id: 10,
@@ -84,7 +85,7 @@ export const Project = [
     body: "I'm at a loss for words. This is amazing. I love it.",
     img: "https://avatar.vercel.sh/james",
     techs: ["WordPress"],
-    url: "https://conecta.com.au/",
+    url: "https://bongiorno.com.au/",
   },
   {
     id: 11,

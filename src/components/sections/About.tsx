@@ -98,9 +98,7 @@ const About = () => {
 
       <div className="flex w-full max-w-screen-lg items-center px-5 md:px-0">
         <h2 className="leading scroll-m-20 text-2xl font-extrabold md:text-center lg:text-4xl">
-          A seasoned web developer specializing in{" "}
-          <span className="border-b-2 border-primary">WordPress</span> and{" "}
-          <span className="border-b-2 border-primary">Next/React</span>. I
+          A seasoned web developer specializing in WordPress and Next/React. I
           create high-quality, scalable web solutions that focus on delivering
           seamless user experiences with clean, maintainable code.
         </h2>
