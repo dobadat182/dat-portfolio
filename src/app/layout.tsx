@@ -29,9 +29,6 @@ export default function RootLayout({
       <GoogleTagManager gtmId="G-N62HWH50LJ" />
       <head />
       <body>
-        <div>
-          <h1>{process.env.GA_ID}</h1>
-        </div>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
