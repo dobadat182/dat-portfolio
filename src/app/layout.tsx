@@ -1,6 +1,7 @@
 import { ThemeProvider } from "@/providers/theme-provider";
 import "../styles/globals.scss";
 import { Inter, Yeseva_One } from "next/font/google";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 const inter = Inter({
   subsets: ["vietnamese"],
@@ -25,8 +26,12 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${inter.variable} ${yeseva_one.variable} scroll-smooth antialiased`}
     >
+      <GoogleTagManager gtmId="G-N62HWH50LJ" />
       <head />
       <body>
+        <div>
+          <h1>{process.env.GA_ID}</h1>
+        </div>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
