@@ -1,7 +1,9 @@
-import { ThemeProvider } from "@/providers/theme-provider";
 import "../styles/globals.scss";
+import { ThemeProvider } from "@/providers/theme-provider";
 import { Inter, Yeseva_One } from "next/font/google";
 import { GoogleTagManager } from "@next/third-parties/google";
+
+import CookieConsent from "@/components/common/CookieConsent";
 
 const inter = Inter({
   subsets: ["vietnamese"],
@@ -26,8 +28,9 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${inter.variable} ${yeseva_one.variable} scroll-smooth antialiased`}
     >
-      <GoogleTagManager gtmId="G-N62HWH50LJ" />
       <head />
+      <GoogleTagManager gtmId="G-N62HWH50LJ" />
+
       <body>
         <ThemeProvider
           attribute="class"
@@ -37,6 +40,8 @@ export default function RootLayout({
         >
           {children}
         </ThemeProvider>
+
+        <CookieConsent variant="small" />
       </body>
     </html>
   );

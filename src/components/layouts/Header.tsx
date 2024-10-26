@@ -85,7 +85,7 @@ const DATA = {
   },
 };
 
-export default function Navbar() {
+export default function Header() {
   const { theme, setTheme } = useTheme();
 
   return (

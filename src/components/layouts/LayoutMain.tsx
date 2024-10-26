@@ -1,10 +1,10 @@
-import Footer from "@/components/shared/Footer";
-import Navbar from "@/components/shared/Navbar";
+import Footer from "./Footer";
+import Header from "./Header";
 
-const PrimaryLayout = ({ children }: DefaultProps) => {
+const LayoutMain = ({ children }: DefaultProps) => {
   return (
     <>
-      <Navbar />
+      <Header />
       <main className="overflow-hidden [&::-webkit-scrollbar-thumb]:bg-gray-300 [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar]:w-2">
         {children}
       </main>
@@ -13,4 +13,4 @@ const PrimaryLayout = ({ children }: DefaultProps) => {
   );
 };
 
-export default PrimaryLayout;
+export default LayoutMain;

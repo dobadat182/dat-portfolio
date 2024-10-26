@@ -6,9 +6,9 @@ import {
   IconFileText,
   IconMail,
 } from "@tabler/icons-react";
-import { H3, Heading1 } from "@/components/shared/Typo";
 import ImageMe from "@/assets/images/datdo.jpg";
 import Image from "next/image";
+import { H3, Heading1 } from "../common/Typo";
 
 type ProfileItemProps = {
   link: string;

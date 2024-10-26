@@ -1,6 +1,6 @@
-import HeadingSection from "@/components/shared/HeadingSection";
 import { Skill } from "@/data/global-data";
-import { H4 } from "@/components/shared/Typo";
+import { H4 } from "../common/Typo";
+import HeadingSection from "../common/HeadingSection";
 
 const Badge = ({ text }: { text?: string }) => {
   return (

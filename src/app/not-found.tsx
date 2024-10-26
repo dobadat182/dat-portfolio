@@ -1,4 +1,4 @@
-import { H1 } from "@/components/shared/Typo";
+import { H1 } from "@/components/common/Typo";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 

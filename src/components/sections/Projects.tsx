@@ -1,8 +1,8 @@
 "use client";
 
-import CardProject from "@/components/shared/CardProject";
-import ComponentHeading from "@/components/shared/HeadingSection";
 import { Project } from "@/data/global-data";
+import HeadingSection from "../common/HeadingSection";
+import CardProject from "../common/CardProject";
 
 const FeaturedProjects = () => {
   return (
@@ -10,7 +10,7 @@ const FeaturedProjects = () => {
       id="featured-projects"
       className="mb-20 flex flex-col items-center justify-center px-5"
     >
-      <ComponentHeading
+      <HeadingSection
         title={"Featured Projects"}
         desc={
           "Explore how I've brought ideas to life, creating captivating digital experiences that engage and inspire."
