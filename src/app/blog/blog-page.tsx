@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { PostCard } from "@/lib/interface";
 import { Suspense } from "react";
