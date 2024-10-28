@@ -7,7 +7,7 @@ import Skills from "@/components/sections/Skills";
 import FeaturedProjects from "@/components/sections/Projects";
 
 export const metadata: Metadata = {
-  title: "Home - Davis website creator",
+  title: "Home - Davis Do Developer",
   description:
     "Davis, a web engineer with 3 years of experience in building and optimizing responsive web applications. Specializing in HTML, CSS, JavaScript, and hands-on experience with WordPress and Next.js, Davis delivers high-quality web solutions focused on performance and user experience.",
 };

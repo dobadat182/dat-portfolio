@@ -49,7 +49,7 @@ const Hero = () => {
         />
       </div>
 
-      <Ripple />
+      <Ripple mainCircleSize={300} />
     </HeroWrapper>
   );
 };
