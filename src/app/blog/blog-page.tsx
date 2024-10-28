@@ -4,7 +4,7 @@ import { Suspense } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { BASE_URL } from "@/lib/api";
 
-export async function getPosts() {
+async function getPosts() {
   const res = await fetch(BASE_URL("api/posts"), {
     next: { revalidate: 3600 },
   });
