@@ -70,7 +70,7 @@ const About = () => {
       <div className="flex w-full max-w-screen-md items-center gap-3 px-5 md:gap-4 lg:px-0">
         <ProfileItem
           text="Resume"
-          link="/"
+          link="/resume"
           icon={<IconFileText className="w-4" strokeWidth={1.4} />}
         />
         <ProfileItem
