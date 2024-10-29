@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { PostCard } from "@/lib/interface";
 import { client } from "@/lib/client";
+import { format } from "date-fns/format";
 
 const POST_QUERY = `*[
   _type == "post"
@@ -15,24 +16,41 @@ const BlogPage = async () => {
     options,
   );
   return (
-    <div className="container mx-auto min-h-screen max-w-screen-lg py-8">
-      <div className="grid gap-4">
-        <div className="grid gap-4">
-          {data.map((post) => (
-            <Link
-              key={post._id}
-              href={`/blog/${post.slug.current}`}
-              className="rounded-lg border p-4 transition-shadow hover:shadow-md"
-            >
-              <h2 className="mb-2 text-xl font-semibold">{post.title}</h2>
-              <time className="text-sm text-gray-500">
-                {new Date(post.publishedAt).toLocaleDateString()}
-              </time>
-            </Link>
-          ))}
-        </div>
-      </div>
-    </div>
+    <>
+      {data.map((post) => (
+        <Link
+          key={post._id}
+          href={`/blog/${post.slug.current}`}
+          className="grid grid-cols-1 gap-4 rounded-xl border-2 px-5 py-4 transition-shadow duration-300 hover:shadow-md"
+        >
+          <h3 className="font-mono text-2xl font-bold">{post.title}</h3>
+
+          <p className="text-sm text-zinc-500">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis
+            vel explicabo totam eaque laudantium odio hic, non cum repellendus
+            et beatae fugiat recusandae maiores iusto pariatur quia laboriosam
+            dicta? Quidem!
+          </p>
+
+          <div className="flex items-center justify-between">
+            <div className="flex gap-2">
+              <div className="rounded-lg border px-2 py-1 text-sm text-zinc-500 transition-transform duration-300 hover:-translate-y-1 hover:translate-x-1 hover:shadow-lg">
+                NextJS
+              </div>
+              <div className="rounded-lg border px-2 py-1 text-sm text-zinc-500 transition-transform duration-300 hover:-translate-y-1 hover:translate-x-1 hover:shadow-lg">
+                Sanity
+              </div>
+              <div className="rounded-lg border px-2 py-1 text-sm text-zinc-500 transition-transform duration-300 hover:-translate-y-1 hover:translate-x-1 hover:shadow-lg">
+                Technology
+              </div>
+            </div>
+            <time className="text-sm text-gray-500">
+              {format(new Date(post.publishedAt), "dd/MM/yyyy")}
+            </time>
+          </div>
+        </Link>
+      ))}
+    </>
   );
 };
 

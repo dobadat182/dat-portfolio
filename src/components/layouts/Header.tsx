@@ -89,7 +89,7 @@ export default function Header() {
   const { theme, setTheme } = useTheme();
 
   return (
-    <nav className="fixed bottom-5 z-50 w-full">
+    <nav className="bg-accent-1/40 fixed bottom-5 z-50 w-full">
       <TooltipProvider>
         <Dock direction="middle">
           {DATA.navbar.map((item) => (

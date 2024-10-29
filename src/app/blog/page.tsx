@@ -11,7 +11,11 @@ export const metadata: Metadata = {
 const Blog = () => {
   return (
     <PrimaryLayout>
-      <BlogPage />
+      <div className="container mx-auto min-h-screen max-w-screen-md py-8">
+        <div className="grid gap-4">
+          <BlogPage />
+        </div>
+      </div>
     </PrimaryLayout>
   );
 };
