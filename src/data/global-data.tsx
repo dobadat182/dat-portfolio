@@ -2,7 +2,7 @@ export const Project = [
   {
     id: 1,
     name: "Safety Path",
-    code: "@stp",
+    code: "stp",
     body: "I've never seen anything like this before. It's amazing. I love it.",
     img: "https://avatar.vercel.sh/jack",
     techs: ["WordPress"],
@@ -11,7 +11,7 @@ export const Project = [
   {
     id: 2,
     name: "Intergral Lighting",
-    code: "@itl",
+    code: "itl",
     body: "I don't know what to say. I'm speechless. This is amazing.",
     img: "https://avatar.vercel.sh/jill",
     techs: ["WordPress"],
@@ -20,7 +20,7 @@ export const Project = [
   {
     id: 3,
     name: "Lacoste Viet Nam",
-    code: "@lcv",
+    code: "lcv",
     body: "I'm at a loss for words. This is amazing. I love it.",
     img: "https://avatar.vercel.sh/john",
     techs: ["WordPress"],
@@ -29,7 +29,7 @@ export const Project = [
   {
     id: 4,
     name: "Mintlabo",
-    code: "@mlb",
+    code: "mlb",
     body: "I'm at a loss for words. This is amazing. I love it.",
     img: "https://avatar.vercel.sh/jane",
     techs: ["WordPress"],
@@ -38,7 +38,7 @@ export const Project = [
   {
     id: 5,
     name: "Jiffy",
-    code: "@jf",
+    code: "jff",
     body: "I'm at a loss for words. This is amazing. I love it.",
     img: "https://avatar.vercel.sh/jenny",
     techs: ["Nuxt"],
@@ -47,7 +47,7 @@ export const Project = [
   {
     id: 6,
     name: "Vietnam Booking",
-    code: "@vnb",
+    code: "vnbk",
     body: "I'm at a loss for words. This is amazing. I love it.",
     img: "https://avatar.vercel.sh/james",
     techs: ["Next"],
@@ -55,7 +55,7 @@ export const Project = [
   {
     id: 7,
     name: "Boss Hunting",
-    code: "@bh",
+    code: "boh",
     body: "I'm at a loss for words. This is amazing. I love it.",
     img: "https://avatar.vercel.sh/james",
     techs: ["WordPress"],
@@ -63,7 +63,7 @@ export const Project = [
   {
     id: 8,
     name: "It Take A Village",
-    code: "@itv",
+    code: "itv",
     body: "I'm at a loss for words. This is amazing. I love it.",
     img: "https://avatar.vercel.sh/james",
     techs: ["WordPress"],
@@ -72,7 +72,7 @@ export const Project = [
   {
     id: 9,
     name: "Conecta",
-    code: "@cnt",
+    code: "cnt",
     body: "I'm at a loss for words. This is amazing. I love it.",
     img: "https://avatar.vercel.sh/james",
     techs: ["WordPress"],
@@ -81,7 +81,7 @@ export const Project = [
   {
     id: 10,
     name: "Bongiorno Group",
-    code: "@bgg",
+    code: "bog",
     body: "I'm at a loss for words. This is amazing. I love it.",
     img: "https://avatar.vercel.sh/james",
     techs: ["WordPress"],
@@ -90,7 +90,7 @@ export const Project = [
   {
     id: 11,
     name: "Athletics Victoria",
-    code: "@ath",
+    code: "ath",
     body: "I'm at a loss for words. This is amazing. I love it.",
     img: "https://avatar.vercel.sh/james",
     techs: ["WordPress"],
@@ -99,7 +99,7 @@ export const Project = [
   {
     id: 12,
     name: "Reveal Group",
-    code: "@rvg ",
+    code: "rvg ",
     body: "I'm at a loss for words. This is amazing. I love it.",
     img: "https://avatar.vercel.sh/james",
     techs: ["WordPress"],
