@@ -1,22 +1,33 @@
-import { Metadata } from "next";
-import PrimaryLayout from "@/components/layouts/LayoutMain";
-import BlogPage from "./blog-page";
+export const revalidate = 0;
 
-export const metadata: Metadata = {
-  title: "Blog - Davis Do",
-  description:
-    "Davis, a web engineer with 3 years of experience in building and optimizing responsive web applications. Specializing in HTML, CSS, JavaScript, and hands-on experience with WordPress and Next.js, Davis delivers high-quality web solutions focused on performance and user experience.",
-};
+import LayoutBlog from "@/components/layouts/LayoutBlog";
+import { getPosts, Post } from "@/sanity/queries/posts";
+import Image from "next/image";
+import Link from "next/link";
 
-const Blog = () => {
+const Blog = async () => {
+  const postsData: Post[] = await getPosts();
+  console.log(postsData);
+
   return (
-    <PrimaryLayout>
-      <div className="container mx-auto min-h-screen max-w-screen-md py-8">
-        <div className="grid gap-4">
-          <BlogPage />
+    <LayoutBlog>
+      <section
+        id="section"
+        className="relative flex w-full items-center justify-center py-24 sm:h-screen sm:max-h-screen sm:py-24"
+      >
+        <div id="container" className="h-full w-full px-6 sm:px-24">
+          <div className="font-bebas text-6xl text-white">
+            <h1>Our Blogs</h1>
+          </div>
+
+          <div>
+            {postsData.map((post, index) => {
+              return <div>{post.title}</div>;
+            })}
+          </div>
         </div>
-      </div>
-    </PrimaryLayout>
+      </section>
+    </LayoutBlog>
   );
 };
 
