@@ -96,6 +96,7 @@ export default function Header() {
             <DockIcon key={item.label}>
               <div className="flex items-center">
                 <Link
+                  prefetch={true}
                   href={item.href}
                   aria-label={item.label}
                   className={cn(
