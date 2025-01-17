@@ -7,26 +7,44 @@ import Link from "next/link";
 
 const Blog = async () => {
   const postsData: Post[] = await getPosts();
-  console.log(postsData);
 
   return (
     <LayoutBlog>
-      <section
-        id="section"
-        className="relative flex w-full items-center justify-center py-24 sm:h-screen sm:max-h-screen sm:py-24"
-      >
-        <div id="container" className="h-full w-full px-6 sm:px-24">
-          <div className="font-bebas text-6xl text-white">
-            <h1>Our Blogs</h1>
-          </div>
-
-          <div>
-            {postsData.map((post, index) => {
-              return <div>{post.title}</div>;
-            })}
+      <div className="flex flex-col md:flex-row md:gap-6 flex-wrap items-center justify-items-stretch">
+        <div className="sm:order-1 md:flex-1">
+          <div id="page-header" className="relative my-8">
+            <h1 className="text-2xl font-medium tracking-tighter">hey, I'm Davis</h1>
+            <p>This is my digital garden, where I write about the things I'm working on and share what I've learned 🎉</p>
           </div>
         </div>
-      </section>
+        <div className="sm:order-2">
+          <div>
+            <h2>Davis.D</h2>
+          </div>
+        </div>
+      </div>
+        <div className="">
+          {postsData.map((post, index) => {
+            return (
+              <Link key={index} href={`blog/${post.slug?.current}` || ""}>
+                <div className="w-full col-span-1 group shrink-0 border border-white px-3 py-2">
+                  <div className="flex flex-col mb-6">
+                    <h2 className="text-black text-xl">{post?.title}</h2>
+
+                    <div className="flex justify-between w-full">
+                      <span className="text-black text-sm">
+                        {post.author}
+                      </span>
+                      <span className="text-black text-sm">
+                        {post.publishedAt}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
     </LayoutBlog>
   );
 };
