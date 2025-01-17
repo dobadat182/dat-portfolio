@@ -16,9 +16,9 @@ export default function Home() {
   return (
     <LayoutMain>
       <div className="flex flex-col gap-20">
-        <Hero />
+        {/* <Hero />
         <About />
-        <Skills />
+        <Skills /> */}
         <FeaturedProjects />
       </div>
     </LayoutMain>

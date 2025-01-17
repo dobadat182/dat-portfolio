@@ -2,11 +2,11 @@
 
 import Link from "next/link";
 import {
-  Book,
   CalendarIcon,
   HomeIcon,
   MailIcon,
   Moon,
+  SquarePen,
   Sun,
 } from "lucide-react";
 
@@ -62,7 +62,7 @@ const Icons = {
 const DATA = {
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
-    { href: "/blog", icon: Book, label: "Blog" },
+    { href: "/blog", icon: SquarePen, label: "Blog" },
   ],
   contact: {
     social: {
@@ -94,23 +94,21 @@ export default function Header() {
         <Dock direction="middle">
           {DATA.navbar.map((item) => (
             <DockIcon key={item.label}>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Link
-                    href={item.href}
-                    aria-label={item.label}
-                    className={cn(
-                      buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-12 rounded-full",
-                    )}
-                  >
-                    <item.icon className="size-4" />
-                  </Link>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p className="text-sm">{item.label}</p>
-                </TooltipContent>
-              </Tooltip>
+              <div className="flex items-center">
+                <Link
+                  href={item.href}
+                  aria-label={item.label}
+                  className={cn(
+                    buttonVariants({ variant: "ghost", size: "icon" }),
+                    "group relative flex size-12 items-center rounded-full",
+                  )}
+                >
+                  <item.icon className="size-4 group-hover:hidden" />
+                  <span className="ml-2 hidden text-sm transition-all group-hover:inline">
+                    {item.label}
+                  </span>
+                </Link>
+              </div>
             </DockIcon>
           ))}
           <Separator orientation="vertical" className="h-full" />
