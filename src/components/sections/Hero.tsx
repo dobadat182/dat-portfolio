@@ -4,7 +4,7 @@ import Ripple from "@/components/ui/ripple";
 import SparklesText from "@/components/ui/sparkles-text";
 import styled from "styled-components";
 
-const HeroWrapper = styled.section`
+const HeroStyles = styled.section`
   &::before {
     position: absolute;
     z-index: -1;
@@ -41,16 +41,16 @@ const HeroWrapper = styled.section`
 
 const Hero = () => {
   return (
-    <HeroWrapper className="relative flex h-screen w-full items-center justify-center">
+    <HeroStyles className="relative flex h-screen w-full items-center justify-center">
       <div className="flex max-w-3xl flex-col">
         <SparklesText
-          className="whitespace-pre-wrap text-center font-sans text-5xl font-medium tracking-tighter md:text-8xl"
+          className="whitespace-pre-wrap text-center font-sans text-5xl font-bold tracking-tighter md:text-8xl"
           text="Website Creator"
         />
       </div>
 
       <Ripple mainCircleSize={300} />
-    </HeroWrapper>
+    </HeroStyles>
   );
 };
 

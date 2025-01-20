@@ -1,6 +1,6 @@
 import "../styles/globals.scss";
 import { ThemeProvider } from "@/providers/theme-provider";
-import { Inter, Yeseva_One } from "next/font/google";
+import { Inter, Yeseva_One, Be_Vietnam_Pro } from "next/font/google";
 import { GoogleTagManager } from "@next/third-parties/google";
 
 import CookieConsent from "@/components/common/CookieConsent";
@@ -29,8 +29,6 @@ export default function RootLayout({
       className={`${inter.variable} ${yeseva_one.variable} scroll-smooth antialiased`}
     >
       <head />
-      <GoogleTagManager gtmId="G-N62HWH50LJ" />
-
       <body>
         <ThemeProvider
           attribute="class"

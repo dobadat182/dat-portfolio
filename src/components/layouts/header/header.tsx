@@ -135,7 +135,9 @@ export default function Header() {
               </Tooltip>
             </DockIcon>
           ))}
+
           <Separator orientation="vertical" className="h-full py-2" />
+
           <DockIcon>
             <Tooltip>
               <TooltipTrigger asChild>
@@ -149,12 +151,12 @@ export default function Header() {
                 >
                   <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
                   <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-                  <span className="sr-only">Toggle theme</span>
+                  <span className="sr-only">Switch theme</span>
                 </Button>
               </TooltipTrigger>
               <TooltipContent>
                 <p className="text-sm">
-                  {theme === "dark" ? "Light" : "Dark"} Mode
+                  {theme === "dark" ? "Light" : "Dark"} mode
                 </p>
               </TooltipContent>
             </Tooltip>
