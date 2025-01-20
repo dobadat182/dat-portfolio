@@ -28,11 +28,11 @@ const Blog = async () => {
         <div className="sm:order-1 md:flex-1">
           <div id="page-header" className="relative my-8 text-black">
             <h1 className="mb-1 text-2xl font-medium tracking-tighter">
-              hey, I'm Davis
+              hey, I&apos;m Davis
             </h1>
             <p>
-              This is my digital garden, where I write about the things I'm
-              working on and share what I've learned 🎉
+              This is my digital garden, where I write about the things I&apos;m
+              working on and share what I&apos;ve learned 🎉
             </p>
           </div>
         </div>

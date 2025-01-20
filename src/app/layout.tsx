@@ -1,7 +1,6 @@
 import "../styles/globals.scss";
 import { ThemeProvider } from "@/providers/theme-provider";
-import { Inter, Yeseva_One, Be_Vietnam_Pro } from "next/font/google";
-import { GoogleTagManager } from "@next/third-parties/google";
+import { Inter, Yeseva_One } from "next/font/google";
 
 import CookieConsent from "@/components/common/CookieConsent";
 
