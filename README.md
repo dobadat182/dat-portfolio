@@ -7,7 +7,7 @@ A modern, elegant portfolio website built with Next.js and React showcasing Davi
 ## Features
 
 - 🌙 Dark/Light mode toggle
-- 🎨 Clean and minimal design  
+- 🎨 Clean and minimal design
 - 📱 Fully responsive layout
 - 🚀 Smooth animations and transitions
 - 💻 Interactive project showcase
@@ -24,23 +24,27 @@ A modern, elegant portfolio website built with Next.js and React showcasing Davi
 ## Sections
 
 ### Hero
+
 - Professional introduction
 - Social media links
 - Call-to-action buttons
 - Dynamic typing animation
 
 ### About
+
 - Personal background
 - Professional journey
 - Technical skills showcase
 
 ### Projects
+
 - Featured work portfolio
 - Project descriptions
 - Live demo links
 - GitHub repository links
 
 ### Contact
+
 - Contact form
 - Social media links
 - Professional email address
@@ -56,3 +60,4 @@ npm install
 
 # Run development server
 npm run dev
+```
