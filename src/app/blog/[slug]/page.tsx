@@ -31,23 +31,25 @@ const urlFor = (source: any) => builder.image(source);
 const portableTextComponents: PortableTextComponents = {
   block: {
     h1: ({ children }) => (
-      <h1 className="mb-6 text-5xl font-bold">{children}</h1>
+      <h1 className="mb-6 font-mono text-5xl font-bold">{children}</h1>
     ),
     h2: ({ children }) => (
-      <h2 className="mb-6 text-4xl font-semibold leading-none">{children}</h2>
+      <h2 className="mb-6 font-mono text-4xl font-medium leading-none">
+        {children}
+      </h2>
     ),
     h3: ({ children }) => (
-      <h3 className="mb-6 text-3xl font-medium">{children}</h3>
+      <h3 className="mb-6 font-mono text-3xl font-medium">{children}</h3>
     ),
     h4: ({ children }) => (
-      <h4 className="mb-6 text-2xl font-medium">{children}</h4>
+      <h4 className="mb-6 font-mono text-2xl font-medium">{children}</h4>
     ),
     normal: ({ children }) => (
       <p className="mb-6 leading-relaxed">{children}</p>
     ),
     blockquote: ({ children }) => (
       <blockquote className="mb-6 w-full transform rounded-2xl border-b-4 border-gray-300 bg-gray-100 p-6 transition-transform hover:scale-105">
-    {children}
+        {children}
       </blockquote>
     ),
   },

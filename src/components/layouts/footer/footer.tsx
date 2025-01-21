@@ -1,5 +1,4 @@
-import React from "react";
-import { H3, Heading1 } from "../common/Typo";
+import { H3, Heading1 } from "../../common/Typo";
 
 const Footer = () => {
   return (
