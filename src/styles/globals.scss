@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* === Global Font Settings === */
 html {
   font-family: var(--font-inter);
 }
@@ -11,7 +12,7 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: var(--font-yeseva-one);
+  font-family: var(--font-volkhov-one);
 }
 
 p,
@@ -23,14 +24,17 @@ a {
   }
 }
 
+/* === Utility Layer === */
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
 }
 
+/* === Base Styles === */
 @layer base {
   :root {
+    /* Light Mode Variables */
     --background: #f5f7f8;
     --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;

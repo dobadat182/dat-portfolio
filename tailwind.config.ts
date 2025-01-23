@@ -6,7 +6,7 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-yeseva-one)"],
+        sans: ["var(--font-volkhov-one)"],
         mono: ["var(--font-inter)"],
       },
       colors: {

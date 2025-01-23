@@ -1,6 +1,6 @@
 import "../styles/globals.scss";
 import { ThemeProvider } from "@/providers/theme-provider";
-import { Inter, Yeseva_One } from "next/font/google";
+import { Inter, Volkhov } from "next/font/google";
 
 import CookieConsent from "@/components/common/CookieConsent";
 
@@ -10,10 +10,10 @@ const inter = Inter({
   display: "swap",
 });
 
-const yeseva_one = Yeseva_One({
-  subsets: ["vietnamese"],
-  variable: "--font-yeseva-one",
-  weight: ["400"],
+const volkhov = Volkhov({
+  subsets: ["latin"],
+  variable: "--font-volkhov-one",
+  weight: ["400", "700"],
 });
 
 export default function RootLayout({
@@ -25,7 +25,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${inter.variable} ${yeseva_one.variable} scroll-smooth antialiased`}
+      className={`${inter.variable} ${volkhov.variable} scroll-smooth antialiased`}
     >
       <head />
       <body>

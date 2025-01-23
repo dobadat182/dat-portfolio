@@ -55,15 +55,18 @@ const portableTextComponents: PortableTextComponents = {
   },
   types: {
     image: ({ value }: { value: SanityImage }) => (
-      <div className="mb-6 aspect-auto h-[33vh] w-full sm:h-[45vh]">
+      <div className="mb-6 aspect-auto w-full overflow-hidden rounded-lg">
         <Image
-          src={urlFor(value).url()}
+          src={urlFor(value).width(1920).height(1080).dpr(2).url()}
           alt={value.alt || "Blog post image"}
-          width={1200}
-          height={630}
-          className="h-full w-full object-cover"
-          loading="lazy"
-          priority={false}
+          width={1920}
+          height={1080}
+          placeholder="blur"
+          blurDataURL={urlFor(value).width(24).height(24).blur(10).url()}
+          sizes="
+            (max-width: 768px) 100vw,
+            (max-width: 1200px) 50vw,
+            40vw"
         />
       </div>
     ),
@@ -108,11 +111,14 @@ const portableTextComponents: PortableTextComponents = {
 const BlogDetailPage = async ({ params }: BlogDetailPageProps) => {
   const { slug } = params;
   const post = await getDetailPost(slug);
-
   return (
     <LayoutBlog>
       <article className="mx-auto max-w-4xl">
         <div className="flex w-full flex-col items-start justify-center text-black">
+          <h1 className="mb-6 font-mono text-4xl font-bold text-gray-900">
+            {post.title}
+          </h1>
+
           <PortableText value={post.body} components={portableTextComponents} />
         </div>
       </article>

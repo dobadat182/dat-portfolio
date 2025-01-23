@@ -97,7 +97,7 @@ const About = () => {
       </div>
 
       <div className="flex w-full max-w-screen-lg items-center px-5 md:px-0">
-        <h2 className="leading scroll-m-20 text-2xl font-extrabold md:text-center lg:text-4xl">
+        <h2 className="leading scroll-m-20 text-2xl font-semibold tracking-wide md:text-center lg:text-4xl">
           A seasoned web developer specializing in WordPress and Next/React. I
           create high-quality, scalable web solutions that focus on delivering
           seamless user experiences with clean, maintainable code.
