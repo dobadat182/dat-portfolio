@@ -1,6 +1,6 @@
 import { Skill } from "@/data/global-data";
 import { H4 } from "../common/Typo";
-import HeadingSection from "../common/HeadingSection";
+import SectionLabel from "../common/SectionLabel";
 
 const Badge = ({ text }: { text?: string }) => {
   return (
@@ -14,7 +14,7 @@ const Skills = () => {
   return (
     <div className="mt-10 flex flex-col items-center justify-center px-5 md:px-0">
       <div className="w-full max-w-screen-md">
-        <HeadingSection
+        <SectionLabel
           title="My Tech Stack"
           desc="The technologies and programming languages I've worked with in real-world projects."
         />

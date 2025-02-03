@@ -55,14 +55,15 @@ const Blog = async () => {
               hey, I&apos;m Davis 👋
             </h1>
             <p className="max-w-lg text-base text-gray-600">
-              This is my digital garden, where I write about the things I&apos;m
-              working on and share what I&apos;ve learned 🎉
+              This is my digital garden 🌱, where I write about the things
+              I&apos;m working on and share what I&apos;ve learned 🎉
             </p>
           </div>
         </div>
         <div className="sm:order-2">
           <div className="flex items-center justify-center rounded-full">
             <Image
+              unoptimized
               alt="Cat with Wry Smile"
               width="80"
               height="80"
@@ -89,7 +90,10 @@ const Blog = async () => {
                 </div>
                 <div className="flex w-full items-center justify-between sm:mt-0 sm:w-auto">
                   <p className="mb-0 ml-10 w-28 text-left text-sm text-gray-500 sm:ml-0 sm:text-right">
-                    <span className="tabular-nums" title="348 views">
+                    <span
+                      className="tabular-nums"
+                      title={`${randomNum()} views`}
+                    >
                       {randomNum()} views
                     </span>
                   </p>

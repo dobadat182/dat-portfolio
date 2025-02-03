@@ -26,9 +26,9 @@ export default function HeaderBlog() {
   const { theme, setTheme } = useTheme();
 
   return (
-    <nav className="bg-accent-1/40 fixed bottom-5 z-50 w-full">
+    <nav className="bg-accent-1/40 fixed bottom-0 z-50 w-full">
       <TooltipProvider>
-        <Dock direction="middle">
+        <Dock direction="middle" className="mb-5 mt-0">
           {DATA.navbar.map((item) => (
             <DockIcon key={item.label}>
               <div className="flex items-center">

@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Project } from "./types";
-import HeadingSection from "@/components/common/HeadingSection";
 import { motion, AnimatePresence } from "framer-motion"; // Import Framer Motion
 import {
   Select,
@@ -12,10 +11,12 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import SectionLabel from "@/components/common/SectionLabel";
 
 const FeaturedProjectsClient = ({ projects }: { projects: Project[] }) => {
   const [filter, setFilter] = useState<string>("All");
   const [sort, setSort] = useState<"none" | "asc" | "desc">("none");
+  const [visibleItems, setVisibleItems] = useState<number>(6);
 
   // Filter projects based on selected tag
   const filteredProjects = projects.filter((project) => {
@@ -33,12 +34,21 @@ const FeaturedProjectsClient = ({ projects }: { projects: Project[] }) => {
     sortedProjects.sort((a, b) => (b.title ?? "").localeCompare(a.title ?? ""));
   }
 
+  // Function to load more items
+  const loadMore = () => {
+    setVisibleItems((prev) => prev + 6); // Tăng số lượng item hiển thị thêm 6
+  };
+  const visibleProjects = sortedProjects.slice(0, visibleItems);
+
+  // Combine filtered and sorted projects
+  const resultData = visibleProjects;
+
   return (
     <div
       id="featured-projects"
       className="mb-20 flex flex-col items-center justify-center px-5"
     >
-      <HeadingSection
+      <SectionLabel
         title={"Featured Projects"}
         desc={
           "Explore how I've brought ideas to life, creating captivating digital experiences that engage and inspire."
@@ -54,7 +64,10 @@ const FeaturedProjectsClient = ({ projects }: { projects: Project[] }) => {
                 className={`cursor-pointer ${
                   filter === tag ? "underline" : ""
                 }`}
-                onClick={() => setFilter(tag)}
+                onClick={() => {
+                  setFilter(tag);
+                  setVisibleItems(6); // Reset số lượng item hiển thị khi filter thay đổi
+                }}
               >
                 {tag}
               </li>
@@ -63,7 +76,10 @@ const FeaturedProjectsClient = ({ projects }: { projects: Project[] }) => {
 
           <Select
             value={sort}
-            onValueChange={(value) => setSort(value as "none" | "asc" | "desc")}
+            onValueChange={(value) => {
+              setSort(value as "none" | "asc" | "desc");
+              setVisibleItems(6);
+            }}
           >
             <SelectTrigger className="w-[180px]">
               <SelectValue placeholder="None" />
@@ -77,7 +93,7 @@ const FeaturedProjectsClient = ({ projects }: { projects: Project[] }) => {
         </div>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-5 lg:grid-cols-3">
           <AnimatePresence>
-            {sortedProjects.map((project) => (
+            {resultData.map((project) => (
               <motion.div
                 key={project.title} // Sử dụng title làm key để đảm bảo animation hoạt động chính xác
                 layout
@@ -91,6 +107,19 @@ const FeaturedProjectsClient = ({ projects }: { projects: Project[] }) => {
             ))}
           </AnimatePresence>
         </div>
+
+        {/* Nút "Load More" */}
+        {visibleItems < sortedProjects.length && (
+          <div className="mt-8 flex justify-center">
+            <button
+              onClick={loadMore}
+              type="button"
+              className="mb-2 me-2 rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700"
+            >
+              Load More
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

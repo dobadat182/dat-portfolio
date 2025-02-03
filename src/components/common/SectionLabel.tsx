@@ -7,7 +7,7 @@ type Props = {
   variants?: string;
 };
 
-const HeadingSection = ({ title, desc, variants = "center" }: Props) => {
+const SectionLabel = ({ title, desc, variants = "center" }: Props) => {
   return (
     <div
       className={`mb-8 flex flex-col md:mb-10 ${variants === "center" ? "items-center" : "items-start"}`}
@@ -22,4 +22,4 @@ const HeadingSection = ({ title, desc, variants = "center" }: Props) => {
   );
 };
 
-export default HeadingSection;
+export default SectionLabel;
