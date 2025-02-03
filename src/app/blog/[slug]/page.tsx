@@ -57,6 +57,7 @@ const portableTextComponents: PortableTextComponents = {
     image: ({ value }: { value: SanityImage }) => (
       <div className="mb-6 aspect-auto w-full overflow-hidden rounded-lg">
         <Image
+          unoptimized
           src={urlFor(value).width(1920).height(1080).dpr(2).url()}
           alt={value.alt || "Blog post image"}
           width={1920}

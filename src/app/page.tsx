@@ -4,7 +4,7 @@ import LayoutMain from "@/components/layouts/LayoutMain";
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
 import Skills from "@/components/sections/Skills";
-import FeaturedProjects from "@/components/sections/Projects";
+import FeaturedProjects from "@/components/sections/FeaturedProjects";
 
 export const metadata: Metadata = {
   title: "Home - Davis Do",
