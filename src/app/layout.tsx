@@ -1,7 +1,7 @@
 import "../styles/globals.scss";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { Inter, Volkhov } from "next/font/google";
-
+import { Analytics } from "@vercel/analytics/react";
 import CookieConsent from "@/components/common/CookieConsent";
 
 const inter = Inter({
@@ -39,6 +39,7 @@ export default function RootLayout({
         </ThemeProvider>
 
         <CookieConsent variant="small" />
+        <Analytics />
       </body>
     </html>
   );

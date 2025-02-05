@@ -28,6 +28,7 @@
     "@sanity/vision": "^3.70.0",
     "@tabler/icons-react": "^3.19.0",
     "@types/lodash": "^4.17.9",
+    "@vercel/analytics": "^1.4.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
