@@ -4,6 +4,8 @@ import { Inter, Volkhov } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import CookieConsent from "@/components/common/CookieConsent";
 
+
+
 const inter = Inter({
   subsets: ["vietnamese"],
   variable: "--font-inter",
